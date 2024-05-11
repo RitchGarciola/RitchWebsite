@@ -18,37 +18,30 @@
     <link href="css/styles.css" rel="stylesheet" />
 
     <style>
-        .carousel-item {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 70vh; /* Adjust the height as needed */
-            text-align: center; /* Center the video horizontally */
-        }
-
-        .carousel-item video {
-            max-width: 100%;
-            max-height: 100%;
-            margin: auto; /* Center the video vertically */
-            width: Auto; /* Adjust the width to maintain aspect ratio */
-            height: auto; /* Adjust the height to maintain aspect ratio */
-        }
-
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            filter: invert(100%); /* Invert the color to make it black */
-        }
-
-        .carousel-control-prev {
-            left: 10%; /* Adjust the distance from the left side */
-        }
-
-        .carousel-control-next {
-            right: 10%; /* Adjust the distance from the right side */
-        }
         .text-blue {
-        color: rgb(47, 5, 102);
-    }
+            color: rgb(47, 5, 102);
+        }
+
+        .card {
+            overflow: hidden;
+            position: relative;
+            height: 400px; /* Fixed height for all cards */
+        }
+
+        .card-img-top {
+            height: 100%; /* Fill the entire height of the card */
+            width: 100%;
+            object-fit: cover; /* Maintain aspect ratio and cover the entire space */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover .card-img-top {
+            transform: scale(1.1);
+        }
+
+        .card-body {
+            height: 100%; /* Fill the entire height of the card body */
+        }
     </style>
 </head>
 <body class="d-flex flex-column h-100 bg-light" style="background: url('assets/kkk.jpg') no-repeat center center fixed; background-size: cover;">
@@ -66,7 +59,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder custom-nav-text">
                     <li class="nav-item"><a class="nav-link text-blue" href="index.html"><Strong>Home</Strong></a></li>
-                    <li class="nav-item"><a class="nav-link text-blue" href="Resume.html"><Strong>Resume</Strong></a></li>
+                    <li class="nav-item"><a class="nav-link text-blue" href="resume.html"><Strong>Resume</Strong></a></li>
                     <li class="nav-item"><a class="nav-link text-blue" href="projects.html"><strong>Projects</strong></a></li>
                     <li class="nav-item"><a class="nav-link text-blue" href="contact.html"><strong>Contact</strong></a></li>
                 </ul>
@@ -75,63 +68,51 @@
         </div>
     </nav>
             
-    <!-- Carousel wrapper -->
-    <div id="carouselVideoExample" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <!-- Indicators -->
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselVideoExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselVideoExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        </div>
-
-        <!-- Inner -->
-        <div class="carousel-inner">
-            <!-- Single item -->
-            <div class="carousel-item active">
-                <a href="https://stanleycars.shop/"> <!-- Add your desired website URL here -->
-                    <video class="img-fluid" autoplay loop muted>
-                        <source src="assets/Carrental.mp4" type="video/mp4" />
-                    </video>
-                </a>
-                <div class="carousel-caption d-none d-md-block">
-                    <!-- Add your caption content if needed -->
+    <!-- Card section -->
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Card 1 -->
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <img src="assets/1.png" class="card-img-top" alt="Waterfall" />
+                    <div class="card-body">
+                        <h5 class="card-title">Stanley's Car Rental Management System</h5>
+                        <p class="card-text">Management System streamlines car rental operations, from inventory management to billing, in one platform.</p>
+                        <a href="https://stanleycars.shop/" class="btn btn-primary">Button</a>
+                    </div>
                 </div>
             </div>
-
-            <!-- Single item -->
-            <div class="carousel-item">
-                <a href="https://www.hope4tom.com/"> <!-- Add your desired website URL here -->
-                    <video class="img-fluid" autoplay loop muted>
-                        <source src="assets/HFT.mp4" type="video/mp4" />
-                    </video>
-                </a>
-                <div class="carousel-caption d-none d-md-block">
-                    <!-- Add your caption content if needed -->
+            <!-- Card 2 -->
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <img src="assets/2.png" class="card-img-top" alt="Sunset Over the Sea" />
+                    <div class="card-body">
+                        <h5 class="card-title">Hope For Tomorrow Website</h5>
+                        <p class="card-text">The digital hub for the ministry, providing resources, updates, and avenues for engagement with their mission and community.</p>
+                        <a href="https://www.hope4tom.com/" class="btn btn-primary">Button</a>
+                    </div>
                 </div>
             </div>
+            <!-- Card 3 -->
+            <div class="col-lg-4">
+                <div class="card mb-4 position-relative">
+                    <img src="assets/3.png" class="card-img-top" alt="Sunset over the Sea" />
+                    <div class="card-body">
+                        <h5 class="card-title">Water Billing Management System</h5>
+                        <p class="card-text">Automates water billing processes for improved efficiency and accuracy in utility management.</p>
+                        <a href="#!" class="btn btn-primary">Button</a>
+                    </div>
+                    <!-- Watermark -->
+                    <div class="position-absolute top-50 start-50 translate-middle" style="background-color: rgba(223, 12, 12, 0.5); padding: 8px;">
+                        <span style="font-size: 50px;" class="text-primary fw-bold">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+            
+            
         </div>
-
-        <!-- Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselVideoExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselVideoExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
-    <!-- Carousel wrapper -->
-
-    <!-- Call to action section-->
-    <section class="py-5 bg-gradient-primary-to-secondary text-white">
-        <div class="container px-5 my-5">
-            <div class="text-center">
-                <h2 class="display-4 fw-bolder mb-4">Let's build something together!</h2>
-                <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="contact.html">Contact me</a>
-            </div>
-        </div>
-    </section>
-
+    <!-- End Card section -->
 </main>
 <!-- Footer-->
 <footer class="bg-white py-4 mt-auto">
